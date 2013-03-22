@@ -4,18 +4,14 @@ lsi: false
 pygments: true
 source:       ./_source
 destination:  ./_site
-plugins:      ./_plugins
 markdown:     rdiscount
 permalink:    /:categories/:title
-exclude: home.html, team.html, team
+exclude: scss
 
 # Jekyll server settings
 auto:         true
-server:       ture
+server:       true
 server_port:  4321
-exclude:
-  - a.less
-  - scss
 
 # Other custom settings
 css:          /assets/css/
