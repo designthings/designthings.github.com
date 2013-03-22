@@ -1,0 +1,11 @@
+<!-- Work thumbnails snippets -->
+<li>
+  <a href="{{ post.url }}">
+    <img src="{{ site.works_images }}{% if post.thumb %}{{ post.thumb }}{% else %}na.png{% endif %}"
+        alt="{{ post.title }}">
+    <p>
+      {{ post.title }}
+      <time datetime="{{ post.date | date_to_xmlschema }}" pubdate>{{ post.date | date: "%b %Y" }}</time>
+    </p>
+  </a>
+</li>

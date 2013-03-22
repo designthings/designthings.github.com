@@ -1,0 +1,30 @@
+// Post list in "note"
+.note-list {
+  // div.note-list
+
+  section {
+    margin: 0 0 $space * .2;
+    overflow: hidden;
+
+    h2 {
+      @extend .font-face;
+      font-size: $baseFontSize * 2;
+      margin: 0 0 .1em;
+      font-weight: normal;
+
+      time {
+        color: rgba($textColor, 0.30);
+      }
+
+      time + a {
+        line-height: 0;
+        // An infinite symbol next to the post date, need line-height: 0 to make vertical-align work
+        vertical-align: 3px;
+      }
+    }
+  }
+
+  section:last-child {
+    margin-bottom: 0;
+  }
+}

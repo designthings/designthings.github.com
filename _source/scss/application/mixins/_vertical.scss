@@ -1,0 +1,9 @@
+// Borrowed from Bootstrap
+@mixin vertical($startColor: #444, $endColor: #333) {
+  background-color: $startColor;
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=$startColor, endColorstr=$endColor);
+  background-image: -moz-linear-gradient(center top, $startColor, $endColor);
+  background-image: -webkit-linear-gradient(top, $startColor, $endColor); // Safari 5.1+, Chrome 10+
+  background-image: linear-gradient(to bottom, $startColor, $endColor); // Standard, IE10
+  background-repeat: repeat-x;
+}

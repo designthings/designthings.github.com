@@ -1,0 +1,48 @@
+// Pserson status
+.status {
+  // h2.status
+
+  a {
+
+    &:before {
+      $size: 9px;
+      display: inline-block;
+      content: "";
+      width: $size;
+      height: $size;
+      border-radius: 50%;
+      background: rgba($textColor, 0.20);
+      margin-right: $size;
+    }
+  }
+}
+
+.available {
+
+  a {
+    color: $textColor;
+
+    &:hover {
+      color: rgba(green, 0.80);
+    }
+
+    &:before {
+      background: rgba(green, 0.60);
+    }
+  }
+}
+
+.unavailable {
+
+  a {
+    color: rgba($textColor, 0.50);
+
+    &:hover {
+      color: rgba(red, 0.60);
+    }
+
+    &:before {
+      background: rgba(red, 0.20);
+    }
+  }
+}

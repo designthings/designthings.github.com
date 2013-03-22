@@ -1,0 +1,56 @@
+// Main site logo
+.logo {
+  display: block;
+  width: 0;
+  height: 0;
+  margin: -29px auto $space / 5;
+  border-style: solid;
+  border-width: 0 26px 45px 26px;
+  border-color: transparent;
+  border-bottom-color: $textColor;
+  text-indent: -9999em;
+
+  &:hover {
+    border-bottom-color: $linkColor;
+  }
+}
+
+// A different logo only available in homepage
+.index { // header.index
+  margin: 0 0 $space / 5;
+  // .vertical(#9475d1, #b67fd6); // tianjin-project-wef
+  @include vertical(#533790, #533790); // corner-bracket-lover
+
+  .logo {
+    margin: $space / 2 auto 0;
+    border-bottom-color: $backgroundColor;
+
+    &:hover {
+      border-bottom-color: rgba($backgroundColor, 0.70);
+    }
+  }
+
+  // Post title
+  h2 {
+    padding: 0 5%;
+
+    a {
+      color: $backgroundColor;
+      @extend .font-face;
+      font-size: $baseFontSize * 1.5;
+      border-bottom: transparent 1px solid; // We have to define a transparent border in order to make transition work
+
+      &:hover {
+        border-bottom-color: $backgroundColor;
+      }
+    }
+  }
+
+  // "LATEST WORK"
+  h3 {
+    @extend .helvetica;
+    padding-top: 64px;
+    color: $backgroundColor;
+    //opacity: .6;
+  }
+}

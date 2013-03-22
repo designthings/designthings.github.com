@@ -1,0 +1,68 @@
+a, button {
+  color: $textColor;
+  text-decoration: none;
+  @include transition(color .5s ease, border-color .5s ease, background-color .5s ease, opacity 1.5s ease);
+
+  &:hover {
+    color: $linkColor;
+    @include transition(color .1s ease, border-color .1s ease, background-color .1s ease, opacity .1s ease);
+  }
+}
+
+img, hr {
+  border: 0;
+}
+
+ins {
+  color: rgba($textColor, 0.4);
+}
+
+del {
+  text-decoration: line-through;
+}
+
+::selection {
+  color: $linkColor;
+  background: rgba($textColor, 0.02);
+}
+
+// Titles wrapper
+hgroup {
+  padding-bottom: $space * 1.35;
+
+  h1 {
+    @extend .font-face;
+    margin: 0 0 .1em;
+
+    // Override margin from article img
+    img {
+      margin-bottom: $baseFontSize * .6;
+    }
+  }
+
+  h2 {
+    @extend .helvetica;
+    color: $subHeadingColor;
+  }
+
+  // TODO: performance opti.
+  & + .txt :first-child {
+    // For example, hgroup + .txt h3:first-child
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
+
+// Article wrapper
+article {
+  max-width: $wrapperWidth;
+  margin: 0 auto $space * 1.35;
+  @extend .cf;
+  // For some specified posts in work category
+
+  img, video, iframe {
+    display: block;
+    margin: 0 auto 40px;
+    max-width: 100%;
+  }
+}

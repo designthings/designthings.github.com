@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<!-- Post template -->
+<article>
+
+  <!-- Post title -->
+  <hgroup>
+    {% if page.img-headline %}
+      <h1><img src="{{ site.works_images }}{{ page.img-headline }}" alt="{{ page.title | xml_escape }}"></h1>
+    {% else %}
+      <h1>{% if page.link %}<a href="{{ page.link }}">{{ page.title }} &rarr;</a>{% else %}{{ page.title }}{% endif %}</h1>
+    {% endif %}
+    {% if page.date %}<h2><time datetime="{{ page.date | date_to_xmlschema }}" pubdate>{{ page.date | date: "%b %d, %Y" }}</time></h2>{% endif %}
+    {% if page.desc %}<h2>{{ page.desc }}</h2>{% endif %}
+  </hgroup>
+
+  <!-- Post content -->
+  <div class="post">
+  {{ content }}
+  </div>
+
+  <!-- A tweet button at then end of each post -->
+  <a href="http://twitter.com/home?status={{ page.title | cgi_escape }}{{ " by @" | cgi_escape }}{{ site.twitter | cgi_escape }}{{ " " | cgi_escape }}{{ site.url | cgi_escape }}{{ page.url | cgi_escape }}{{ "/" | cgi_escape }}" id="tweet" class="btn" target="_blank">Tweet it</a>
+</article>

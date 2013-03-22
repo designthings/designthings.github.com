@@ -1,0 +1,16 @@
+// Button styles
+.btn {
+  @extend .helvetica;
+  display: inline-block;
+  color: $backgroundColor;
+  background: $textColor;
+  font-size: $baseFontSize / 2 - 2px;
+  padding: 7px 10px;
+  cursor: pointer;
+  outline: none;
+
+  &:hover, &:focus {
+    color: $backgroundColor;
+    background: $linkColor;
+  }
+}

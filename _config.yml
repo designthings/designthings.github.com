@@ -1,0 +1,27 @@
+# Jekyll configurations
+source:       ./_source
+destination:  ./_site
+plugins:      ./_plugins
+markdown:     rdiscount
+permalink:    /:categories/:title
+exclude: home.html, team.html, team
+
+# Jekyll server settings
+auto:         true
+server:       ture
+server_port:  4321
+exclude:
+  - a.less
+  - scss
+
+# Other custom settings
+css:          /assets/css/
+images:       /assets/images/
+works_images: /assets/images/works/
+name:         DesignThings
+author:       Iryna Evseeva
+email:        evseeva.iryna@gmail.com
+slogan:       I live and eat design.
+twitter:      irevseeva
+availability: free
+url:          http://designthings.github.com

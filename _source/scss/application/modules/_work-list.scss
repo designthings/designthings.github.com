@@ -1,0 +1,63 @@
+// Image list in "work"
+.work-list {
+  // ul.work-list
+  margin: -$thumbPadding;
+  text-align: left;
+  @extend .cf;
+
+  li {
+    position: relative;
+    list-style: none;
+    float: left;
+    margin: $thumbPadding;
+
+    &:hover {
+      a {
+        opacity: 1;
+      }
+
+      img {
+        @include transition(-webkit-filter .1s ease);
+        -webkit-filter: none;
+        filter: none;
+      }
+    }
+  }
+
+  a {
+    display: block;
+    width: $thumbSize;
+    height: $thumbSize + $thumbFontSize * 2 + $thumbPadding * 1.4 + 1px;
+    // 1px to make the contianer safer
+    @extend .font-face;
+    font-size: $thumbFontSize;
+    overflow: hidden;
+    // For text
+  }
+
+  img {
+    width: $thumbSize;
+    height: $thumbSize;
+    margin: 0;
+    // Override: article img
+    background: rgba($linkColor, 0.10);
+    color: transparent;
+    // Hide img alt
+    @include transition(-webkit-filter .5s ease);
+    -webkit-filter: grayscale(.9);
+    filter: grayscale(.9);
+  }
+
+  p {
+    margin: $thumbPadding * 1.4 0 0;
+  }
+
+  time {
+    color: rgba($textColor, 0.30);
+  }
+
+  // Better margin between to work lists
+  & ~ div.txt {
+    margin: $space * .5 0 0;
+  }
+}

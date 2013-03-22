@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.name }}</title>
+
+  {% if page.permalink %}
+  <link rel="canonical" href="{{ site.url }}{{ page.permalink }}">
+  {% endif %}
+
+  <link rel="stylesheet" href="{{ site.css }}style.css">
+
+  {% if page.error %}
+  <!-- Error page specified styles -->
+  <style>
+    :root {
+      -webkit-filter: invert(100%);
+    }
+  </style>
+  {% endif %}
+</head>
+<body>
+
+<!-- Header, logo, we need a .index class here to include homepage specified styles -->
+  <header class="{% if page.home or page.error %}index{% endif %}">
+  {% if page.home or page.error %}
+    <h3><img src="{{ site.images }}logo.png"></h3>
+  {% endif %}
+
+    <!-- There's a normal header for the other pages -->
+    <h1><a href="/" class="logo" accesskey="x">{{ site.name }}</a></h1>
+  </header>
+
+  <!-- Wrap in all width sensitive elements -->
+  <div class="wrapper">
+
+    <!-- Main navigation with current page / categoriy highlighted -->
+    <nav class="navigation">
+      {% if page.permalink == '/' %}
+      <ul class="nav-home">{% endif %}
+      {% if page.permalink == '/work/' or page.category == 'work' %}
+      <ul class="nav-work">{% endif %}
+      {% if page.permalink == '/about/' or page.category == 'about' %}
+      <ul class="nav-about">{% endif %}
+        <li{% if page.permalink == '/work/' or page.category == 'work' %} class="current"{% endif %}><a href="/work/">Works</a></li>
+        <li{% if page.permalink == '/' or page.category == 'home' %} class="current"{% endif %}><a href="/">Home</a></li>
+        <li{% if page.permalink == '/about/' or page.category == 'about' %} class="current"{% endif %}><a href="/about/">About</a></li>
+      </ul>
+    </nav>
+
+    <!-- All dynamic, user generated content go here. It's linked with page.html and post.html at the moment -->
+    {{ content }}
+
+  </div>
+  <!-- .wrapper -->
+
+  <!-- Footer section -->
+  {% if page.title %}
+  <!-- Not homepage -->
+  <footer>
+    <p>
+      <a href="/">{{ site.name }}</a>
+    </p>
+  </footer>
+  {% endif %}
+
+  <!-- Add FlexSlider script for posts with sliders -->
+  {% if page.plugin == 'slider' %}
+  {% include slider.html %}
+  {% endif %}
+
+  {% include analytics.html %}
+</body>
+</html>

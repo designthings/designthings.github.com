@@ -1,0 +1,155 @@
+// Basic staff inside article .txt
+.txt {
+  overflow: hidden;
+  text-align: left;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+
+  a {
+    border-bottom: 1px dotted rgba($textColor, 0.30);
+    // Set larger value for invert color
+  }
+
+  p {
+    margin: 0 0 1.1em;
+    line-height: $baseLineHeight;
+  }
+
+  h3 {
+    @extend .helvetica;
+    margin: $space 0 1.6em;
+  }
+
+  ul, ol {
+    margin: 0 0 1em 1.5em;
+
+    li {
+      line-height: $baseLineHeight;
+    }
+  }
+
+  ol {
+    margin-left: 1.75em;
+  }
+
+  blockquote {
+    position: relative;
+    padding-left: $space * .75;
+    font-style: italic;
+    @extend .cf;
+
+    &:before {
+      position: absolute;
+      top: -16px;
+      left: -8px;
+      content: "\201c";
+      // http://www.fileformat.info/info/unicode/char/201c/index.htm
+      font-size: 120px;
+      color: rgba($textColor, 0.70);
+      font-family: $sansSerif;
+      font-style: normal;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    cite {
+      float: right;
+      margin: 0 0 2em;
+      font-size: 85%;
+      color: rgba($textColor, 0.80);
+
+      &:before {
+        content: "\2500\2500\00a0" // http://www.fileformat.info/info/unicode/char/2500/index.htm
+      }
+    }
+  }
+
+  sup {
+    font-size: 75%;
+  }
+
+  hr {
+    @extend .helvetica;
+    margin: $space 0 1.6em;
+    &:before {
+      content: attr(data-placeholder);
+    }
+  }
+
+  abbr:after {
+    content: " (" attr(title) ")";
+  }
+
+  code, pre {
+    font-family: Menlo, monospace;
+    color: #68a;
+  }
+
+  // Newsletter subscription form in page "store"
+  form {
+
+    label {
+      @extend .helvetica;
+      display: block;
+      margin-bottom: $space * .3;
+    }
+
+    input {
+      @extend .helvetica;
+      display: block;
+      border: 1px solid rgba($textColor, 0.20);
+      padding: 7px;
+      margin: 0 auto $space * .3;
+      width: 100%;
+      outline: none;
+      box-sizing: border-box;
+      border-radius: 0;
+      // Remove border-radius for ios devices
+      -webkit-appearance: none;
+      // Remove ios pre-defined style
+      &:focus {
+        border-color: $textColor;
+      }
+    }
+  }
+
+  // Rest form validation styles, borrowed from Bootstrap
+  input, textarea, select {
+    &:focus:required:invalid {
+      &:focus {
+        background: rgba($linkColor, 0.05);
+        border-color: $linkColor;
+        box-shadow: none;
+        // Override Firefox default styles
+      }
+    }
+  }
+
+  // Form validation message bubble, borrowed from default WebKit styles
+  // More info: http://trac.webkit.org/browser/trunk/Source/WebCore/css/html.css
+  ::-webkit-validation-bubble-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background: rgba($linkColor, 0.95);
+    color: $backgroundColor;
+    // Override default WebKit styles
+    min-width: 100%;
+    max-height: auto;
+    border: none;
+    padding: 20px 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+  }
+
+  ::-webkit-validation-bubble-arrow {
+    display: none;
+  }
+
+  ::-webkit-validation-bubble-icon {
+    display: none;
+  }
+}

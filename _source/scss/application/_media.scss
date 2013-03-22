@@ -1,0 +1,87 @@
+// Four thumbnails in a row
+@media screen and (max-width: 1238px) {
+  .wrapper {
+    max-width: $thumbSize * 4 + $thumbPadding * 6;
+    // Defined at .work-list
+  }
+}
+
+// Three thumbnails in a row
+@media screen and (max-width: 1018px) {
+  .wrapper {
+    max-width: $thumbSize * 3 + $thumbPadding * 4;
+    // Defined at .work-list
+  }
+}
+
+// Small screen
+@media screen and (max-width: 640px) {
+  article .txt {
+    font-size: 80%;
+  }
+
+// Thumbnail fix for page "Work"
+  .work-list {
+    li {
+      float: none;
+      // Make sure smaller images are stretched to 100% in iOS and Safari, Firefox (only Chrome works without this hack at the moment)
+      margin-bottom: $thumbPadding * 2;
+
+      img {
+        width: 100%;
+        height: auto;
+        // Should be 100%, but Safari for iOS has stupid bug for it.
+      }
+
+      a {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .next, .prev {
+    display: none;
+  }
+}
+
+// All iOS devices, the easiest way
+@media screen and (max-device-width: 480px), (max-device-width: 1024px) {
+  .wrapper {
+    -webkit-text-size-adjust: none;
+  }
+
+  .work-list {
+    img {
+      -webkit-filter: none;
+      filter: none;
+    }
+  }
+}
+
+// iPad and iPhone portrait {
+@media screen and (max-device-width: 1024px) and (orientation: portrait) {
+  .wrapper {
+    $padding: 69px;
+    padding-left: $padding;
+    padding-right: $padding;
+  }
+}
+
+// iPhone
+@media screen and (max-device-width: 480px) {
+  .wrapper {
+    $padding: 32px;
+    padding-left: $padding;
+    padding-right: $padding;
+  }
+}
+
+// iPhone portrait
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+  .wrapper {
+    $padding: 15px;
+    padding-left: $padding;
+    padding-right: $padding;
+  }
+}

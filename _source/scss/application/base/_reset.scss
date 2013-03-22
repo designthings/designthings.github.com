@@ -1,0 +1,38 @@
+// Basic reset
+p,
+ul, ol, li,
+h1, h2, h3, h4, h5, h6,
+blockquote,
+hr {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  line-height: 1;
+}
+
+body {
+  color: $textColor;
+  background: $backgroundColor;
+  font-size: $baseFontSize;
+  font-family: $serif;
+  line-height: $baseLineHeight;
+  margin: 0 auto 0;
+  padding: 0 0  $space * 1.5;
+  text-align: center;
+  text-rendering: optimizelegibility;
+  image-rendering: optimizequality;
+
+  // A semitranslucent bar at the top of the page
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    content: "";
+    background: rgba($textColor, 0.02);
+    border-bottom: 1px solid rgba($textColor, 0.02);
+    z-index: 9999;
+    pointer-events: none;
+  }
+}

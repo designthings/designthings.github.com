@@ -1,0 +1,22 @@
+// Global fixed width wrapper
+.wrapper {
+  max-width: $thumbSize * 5 + $thumbPadding * 8; // Defined at work-list
+  margin: 0 auto;
+  padding: 0 $space * 1.2;
+}
+
+// Width fix for article element except .work-list
+.width-unfixed {
+  // article.width-fix
+  max-width: 100%;
+}
+
+// Centered text
+.center {
+  text-align: center;
+}
+
+// Fix empty space when a paragraph starts with some asian punctuation marks
+.margin-fix:first-letter {
+  margin-left: -.6em;
+}
