@@ -3,10 +3,10 @@ require "bourbon"
 require "sass-globbing"
 
 # Set this to the root of your project when deployed:
-css_dir = "_source/assets/css"
-sass_dir = "_source/scss"
-images_dir = "_source/assets/images"
-fonts_dir = "_source/assets/fonts"
+css_dir = "assets/css"
+sass_dir = "compass"
+images_dir = "assets/images"
+fonts_dir = "assets/fonts"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed

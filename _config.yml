@@ -1,12 +1,7 @@
 # Jekyll configurations
-safe: true
-lsi: false
-pygments: true
-source:       ./_source
-destination:  ./_site
 markdown:     rdiscount
 permalink:    /:categories/:title
-exclude: scss
+exclude: compass, README.md, config.rb, .gitignore, Gemfile, Gemfile.lock, node_modules
 
 # Jekyll server settings
 auto:         true
