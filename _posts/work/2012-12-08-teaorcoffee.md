@@ -10,9 +10,6 @@ img-headline: teaorcoffee-1.png
 
 <div class=txt>
 <p>
-    <strong>Quotmarks Replacer</strong>
-    is a WordPress plugin to disable
-    <code>wptexturize</code>
-    function that keeps all quotation marks and suspension points in half-width form.
+    <strong>TeaOrCoffee App</strong>
 </p>
 </div>
