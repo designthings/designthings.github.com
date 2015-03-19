@@ -1,16 +1,16 @@
 ---
 layout: post
-title: Atlas App
+title: Plottery App
 category: work
 tag: web
 excerpt: website design
-thumb: atlas-thumb.png
-img-headline: atlas-1.png
+thumb: plottery-thumb.png
+img-headline: plottery-1.png
 ---
 
 <div class=txt>
 <p>
-    <strong>Atlas Travel Application</strong>
+    <strong>Plottery Application</strong>
 
 </p>
 
