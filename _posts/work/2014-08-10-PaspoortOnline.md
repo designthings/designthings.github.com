@@ -1,16 +1,16 @@
 ---
 layout: post
-title: Plottery App
+title: PaspoortOnline App
 category: work
 tag: web
 excerpt: website design
-thumb: plottery-thumb.png
-img-headline: plottery-1.png
+thumb: paspoort-thumb.png
+img-headline: paspoort-1.png
 ---
 
 <div class=txt>
 <p>
-    <strong>Plottery Application</strong>
+    <strong>PaspoortOnline School Assistant App</strong>
 
 </p>
 
